@@ -24,7 +24,7 @@ def stop_timer():
     str.session_state.active_timer = None
     str.rerun()
 
-# --- 🚨 타이머 카운트다운 백엔드 처리 (화면 주기적 갱신) ---
+# --- 🚨 타이머 카운트다운 백엔드 처리 (오류 원인이던 중복 rerun 제거!) ---
 if str.session_state.timer_running and str.session_state.timer_remaining >= 0:
     time.sleep(1)
     str.session_state.timer_remaining -= 1
@@ -33,7 +33,6 @@ if str.session_state.timer_running and str.session_state.timer_remaining >= 0:
         str.session_state.timer_running = False
         # 시간이 다 되면 소리 알림 재생 후 상태 리셋
         str.audio("https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg", format="audio/ogg", autoplay=True)
-        str.rerun()
     str.rerun()
 
 
@@ -75,7 +74,6 @@ if str.session_state.active_timer == "② 준비운동":
         if str.button("⏹️ 타이머 정지", key="stop_warmup"):
             stop_timer()
 else:
-    # 현재 실행 중인 다른 타이머가 없을 때만 시작 버튼 활성화
     if str.session_state.active_timer is None:
         if str.button("⏱️ 준비운동 타이머 시작 (60초)", key="btn_warmup"):
             run_timer("② 준비운동", 60)
