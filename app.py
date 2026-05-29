@@ -68,7 +68,10 @@ if str.session_state.timer_running:
     
     if str.session_state.timer_running:
         str.sidebar.success("🎉 운동 종료! 다음 파트너는 '교대' 버튼을 눌러주세요.")
-        str.sidebar.audio("https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg", format="audio/ogg", autoplay=True)
+
+        # 🚨 소리 코드 대신 진동 함수로 교체!
+        trigger_vibrate()
+
         str.session_state.timer_running = False
     else:
         timer_slot.empty()
