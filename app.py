@@ -120,7 +120,7 @@ if exercise_menu == "전체 보기 / 개요" or exercise_menu == "③ 본운동 
     str.caption("💪 도구: 필라테스 링 | ⏱️ 제한시간: 총 3분 (인당 90초) | 🔄 횟수: 무작위 총 6회 / 1세트")
 
     # 🚨 [오류 수정] 웹 브라우저 호환 이미지 파일 주소로 안전하게 교체했습니다!
-    str.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF57QUYX1LtsaLGyZ6lPilQbF7GWsCFa5ZAw&s", caption="이중과제 마주보기 동작 가이드 [출처: 자체 제작 AI 시각자료]")
+    str.image("https://totalworkout.fitness/img/exercise/1280/frame/10550.3.webp", caption="이중과제 마주보기 동작 가이드 [출처: https://totalworkout.fitness/img/exercise/1280/frame/10550.3.webp]")
     
     str.success("**🏃 수행 방법**\n\n와이드 스쿼트 자세로 하체를 단단히 고정하고 링을 가슴 앞에 쥡니다. 파트너가 전방에서 무작위로 손을 뻗으면 흉추를 회전해 링 안으로 조준합니다.")
     str.error("**🔍 파트너 체크리스트**\n\n손을 뻗는 순간 요추에서 회전이나 미끄러지는 전단력이 발생하지 않는지 모니터링합니다.")
